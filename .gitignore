@@ -29,7 +29,6 @@ demo/
 data/subs_train.jsonl
 
 # Boundary-ambiguity difficulty subsets (top-N by the boundary ambiguity coefficient,
-# used for the difficulty-stratified ablations; not needed to reproduce the main results)
 data/highlight_val_hard_top*_boundary_ambiguity.jsonl
 
 # Debug output
