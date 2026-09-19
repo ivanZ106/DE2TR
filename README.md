@@ -162,10 +162,11 @@ video-only path is used by the released models.
 
 ## Acknowledgements
 
-This codebase is built on [QD-DETR](https://github.com/wjun0830/QDDETR), which in turn
-derives from [Moment-DETR](https://github.com/jayleicn/moment_detr). The QVHighlights
-annotations and the evaluation script under `standalone_eval/` come from Moment-DETR.
-We thank the authors for making their code and data available.
+This codebase is built on [TR-DETR](https://github.com/mingyao1120/TR-DETR), which in
+turn derives from [QD-DETR](https://github.com/wjun0830/QD-DETR) and
+[Moment-DETR](https://github.com/jayleicn/moment_detr). The QVHighlights annotations
+and the evaluation script under `standalone_eval/` come from Moment-DETR. We thank the
+authors for making their code and data available.
 
 ## License
 
