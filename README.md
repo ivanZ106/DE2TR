@@ -4,31 +4,32 @@
 
 ![overview](./results/overview.png "DE^2TR overview")
 
+Official implementation of **DE2TR**, a DETR-based framework for joint moment retrieval (MR) and highlight detection (HD). See the homepage or the paper for the method; this repository releases the code, configs and checkpoints.
+
 ## Getting Started
 
-**0. Clone this repository.** 
+**0. Clone this repository.**
 
 ```bash
 git clone https://github.com/ivanZ106/DE2TR.git
 cd DE2TR
 ```
 
-**1. Install dependencies.** 
+**1. Install dependencies.**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**2. Prepare datasets.** 
+**2. Prepare datasets.**
 
-Download the QVHighlights features used in [R2-Tuning](https://github.com/yeliudev/R2-Tuning) from [here](https://drive.google.com/drive/folders/1SpM1NG0_WNwrkP5Qdslz7VRhktgF4Rhv?usp=drive_link), which extracted by CLIP and SlowFast. Unpack them so that the following directories exist relative to the repository root:
+Download the QVHighlights features used in [R2-Tuning](https://github.com/yeliudev/R2-Tuning) from [here](https://drive.google.com/drive/folders/1SpM1NG0_WNwrkP5Qdslz7VRhktgF4Rhv?usp=drive_link), which are extracted by CLIP and SlowFast. Unpack them so that the following directories exist relative to the repository root:
 
 ```
-../features/qvhighlight/   
+../features/qvhighlight/
 ```
 
-Adjust `feat_root` in [de2tr/scripts/train.sh](de2tr/scripts/train.sh) if you keep the
-features elsewhere. For more information about QVHighlights, please refer to [Moment-DETR](https://github.com/jayleicn/moment_detr).
+Adjust `feat_root` in [de2tr/scripts/train.sh](de2tr/scripts/train.sh) if you keep the features elsewhere. For more information about QVHighlights, please refer to [Moment-DETR](https://github.com/jayleicn/moment_detr).
 
 ## Training
 
@@ -44,32 +45,30 @@ bash de2tr/scripts/train.sh --seed 2018 --use_synthetic_data
 
 ## Inference
 
-Download the checkpoint (see `Model Zoo`) and drop it into
-its run directory under `results/`:
+Download the checkpoint (see `Model Zoo`) and drop it into its run directory under `results/`:
 
 ```
 results/*/
-  opt.json                     
+  opt.json
   best_hl_val_preds_metrics.json
   model_best.ckpt               # <- put the checkpoint here
 ```
-
 
 ```bash
 bash de2tr/scripts/inference.sh results/{run_dir}/model_best.ckpt 'val'
 bash de2tr/scripts/inference.sh results/{run_dir}/model_best.ckpt 'test'
 ```
-Replace {run_dir} with the path to your saved checkpoint. 
-See[standalone_eval/README.md](standalone_eval/README.md) for the submission details.
+
+Replace `{run_dir}` with the path to your saved checkpoint. See [standalone_eval/README.md](standalone_eval/README.md) for the submission details.
 
 ## Model Zoo
 
 | Run directory | Variant | MR R1@0.5 | MR R1@0.7 | mAP@0.5 | mAP@0.75 | Avg. mAP | Download |
 |---|---|---|---|---|---|---|---|
-| `hl-video_tef-test_data-2026_02_03_22_47_15` | DE2TR | 68.13 | 53.81 | 68.89 | 51.61 | 50.67 | [link](https://drive.google.com/drive/folders/1CXQ0dWoMGAC3v0u-NekrwNfGC4227_La?usp=drive_link)|
-| `hl-video_tef-test_data-2026_01_29_22_32_50` | DE2TR + BAS | 69.81 | 55.29 | 70.52 | 53.43 | 52.12 | [link](https://drive.google.com/file/d/1vBVlPFKBEArALvVS_E9UiFJEIwwJfFas/view?usp=sharing)|
+| `hl-video_tef-test_data-2026_02_03_22_47_15` | DE2TR | 68.13 | 53.81 | 68.89 | 51.61 | 50.67 | [link](https://drive.google.com/drive/folders/1CXQ0dWoMGAC3v0u-NekrwNfGC4227_La?usp=drive_link) |
+| `hl-video_tef-test_data-2026_01_29_22_32_50` | DE2TR + BAS | 69.81 | 55.29 | 70.52 | 53.43 | 52.12 | [link](https://drive.google.com/file/d/1vBVlPFKBEArALvVS_E9UiFJEIwwJfFas/view?usp=sharing) |
 
-
+Validation-split numbers.
 
 ## Acknowledgements
 
@@ -83,8 +82,8 @@ authors for making their code and data available.
 
 MIT. See [LICENSE](LICENSE).
 
-
 ## BibTeX
+
 If you find the repository or the paper useful, please use the following entry for citation.
 
 ```

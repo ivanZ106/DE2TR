@@ -28,7 +28,7 @@ demo/
 # Pretraining corpus for the subs pipeline (44 MB, distributed separately)
 data/subs_train.jsonl
 
-# Boundary-ambiguity difficulty subsets (top-N by the boundary ambiguity coefficient,
+# Boundary-ambiguity difficulty subsets (top-N by the boundary ambiguity coefficient)
 data/highlight_val_hard_top*_boundary_ambiguity.jsonl
 
 # Debug output
