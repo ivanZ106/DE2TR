@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Notebook / editor scratch
+.ipynb_checkpoints/
+*.swap
+
+# macOS
+.DS_Store
+
+# Model checkpoints and training artifacts
+*.ckpt
+*.pt
+*.npz
+results/*/code.zip
+results/*/tensorboard_log/
+results/*/*.jsonl
+
+# Demo videos for the project homepage (not part of the code release)
+demo/
+
+# Pretraining corpus for the subs pipeline (44 MB, distributed separately)
+data/subs_train.jsonl
+
+# Boundary-ambiguity difficulty subsets (top-N by the boundary ambiguity coefficient,
+# used for the difficulty-stratified ablations; not needed to reproduce the main results)
+data/highlight_val_hard_top*_boundary_ambiguity.jsonl
+
+# Debug output
+debug_results/
